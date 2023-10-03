@@ -47,11 +47,12 @@ const AddPostForm = () => {
                     value={title}
                     onChange={onTitleChange}
                 />
-                <label htmlFor="postContent">Content: </label>
+                <label htmlFor="postAuthor">Author:</label>
                 <select id="postAuthor" value={usersId} onChange={onAuthorChange}>
                     <option value=""></option>
                     {usersOption}
                 </select>
+                <label htmlFor="postContent">Content: </label>
                 <textarea
                     id="postContent"
                     name="postContent"
@@ -60,6 +61,7 @@ const AddPostForm = () => {
                 />
                 <button type="button"
                     onClick={onSavePostClicked}
+                    disabled={!canSave}
                 >Save post</button>
             </form>
         </section>
