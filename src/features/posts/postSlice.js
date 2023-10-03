@@ -10,7 +10,8 @@ const initialState = [
             heart: 0,
             rocket: 0,
             coffee: 0
-    }},
+        }
+    },
     {
         id: '2', title: 'Hello my friend', content: "I'm khanh", data: sub(new Date(), { minutes: 5 }).toISOString(), reactions: {
             thumpsUp: 0,
@@ -18,7 +19,8 @@ const initialState = [
             heart: 0,
             rocket: 0,
             coffee: 0
-    }}
+        }
+    },
 ]
 
 const postsSlice = createSlice({
@@ -29,7 +31,7 @@ const postsSlice = createSlice({
             reducer(state, action) {
                 state.push(action.payload)
             },
-            prepare(title, content , userId) {
+            prepare(title, content, userId) {
                 return {
                     payload: {
                         id: nanoid(),
@@ -58,7 +60,7 @@ const postsSlice = createSlice({
     }
 })
 
-export const selectAllPosts = (state) => state.posts 
+export const selectAllPosts = (state) => state.posts
 
 export const { postAdded, reactionAdded } = postsSlice.actions
 
